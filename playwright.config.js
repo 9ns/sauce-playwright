@@ -6,9 +6,15 @@ module.exports = defineConfig({
   fullyParallel: true,
   reporter: "html",
   use: {
+    headless: false,
+    viewport: { width: 1600, height: 900 },
     baseURL: "https://www.saucedemo.com",
+    screenshot: "only-on-failure",
     trace: "retain-on-failure",
     video: "on"
+  },
+  expect: {
+    timeout: 10000
   },
 
   projects: [
