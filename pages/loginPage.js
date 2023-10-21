@@ -11,8 +11,4 @@ const login = async (page, username, password) => {
     await page.click(loginButton)
 }
 
-const getErrorMessage = (page) => {
-
-}
-
-module.exports = { login, getErrorMessage }
+module.exports = { login }
