@@ -1,19 +1,21 @@
 {
-  "name": "sauce",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "playwright test"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@playwright/test": "^1.39.0",
-    "@types/node": "^20.8.7"
-  },
-  "dependencies": {
-    "dotenv": "^16.3.1"
-  }
+    "name": "sauce",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "playwright test --browser chromium",
+        "headed": "playwright test --browser chromium --headed",
+        "debug": "playwright test --browser chromium --debug"
+    },
+    "keywords": [],
+    "author": "9ns",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.39.0",
+        "@types/node": "^20.8.7"
+    },
+    "dependencies": {
+        "dotenv": "^16.3.1"
+    }
 }
