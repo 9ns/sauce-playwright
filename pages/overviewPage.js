@@ -6,13 +6,11 @@ const priceTaxTotal = ".summary_tax_label"
 const priceTotal = "[class*=summary_total_label]"
 const overviewProducts = ".inventory_item_name"
 
-//TODO refactor into util
 const getOverviewProducts = async (page) => {
     const actualProducts = []
     const products = await page.locator(overviewProducts).all()
     await Promise.all(products.map(async (product) => {
-        const productName = await product.innerText()
-        actualProducts.push(productName)
+        actualProducts.push(await product.innerText())
     }))
     return actualProducts
 }

@@ -5,8 +5,7 @@ const completeText = ".complete-text"
 const completeBackButton = "#back-to-products"
 
 const getCheckoutConfirmation = async (page) => {
-    const confirmationText = await page.locator(completeHeader).innerText()
-    return confirmationText
+    return page.locator(completeHeader).innerText()
 }
 
 module.exports = { getCheckoutConfirmation }

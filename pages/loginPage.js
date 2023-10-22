@@ -2,7 +2,7 @@ const loginTitle = ".login_logo"
 const usernameField = "#user-name"
 const passwordField = "#password"
 const loginButton = "#login-button"
-const errorMessage = "[data-test='error']"
+const errorMessage = ".error-message-container"
 
 const login = async (page, username, password) => {
     await page.goto("/")
@@ -11,4 +11,9 @@ const login = async (page, username, password) => {
     await page.click(loginButton)
 }
 
-module.exports = { login }
+const getErrorMessage = async (page) => {
+    const errorMessageText = await page.locator(errorMessage).innerText()
+    return errorMessageText
+}
+
+module.exports = { login, getErrorMessage }

@@ -1,18 +1,17 @@
 import { test, expect } from "@playwright/test"
 import { login } from "../pages/loginPage"
+import { gotoCart } from "../pages/header"
 import {
     sortBy,
     addLastProductToCart,
-    addTopRightProductToCart,
-    gotoCart
+    addTopRightProductToCart
 } from "../pages/productPage"
 import { getCartProducts, gotoShipping } from "../pages/cart"
 import { enterShippingInfo, gotoOverview } from "../pages/shipping"
 import { finishCheckout, getOverviewProducts } from "../pages/overviewPage"
-import { getCheckoutConfirmation} from "../pages/checkoutComplete"
+import { getCheckoutConfirmation } from "../pages/checkoutComplete"
 import UserTypes from "../enums/UserTypes"
 import Sorting from "../enums/Sorting"
-
 
 test.beforeEach(async ({ page }) => {
     await page.goto("/")
