@@ -1,0 +1,34 @@
+const backButton = "#back-to-products"
+const productContainer = ".inventory_details_desc_container"
+const productName = "[class*='inventory_details_name']"
+const productImage = ".inventory_details_img"
+const productDescription = "[class*='inventory_details_desc']"
+const productPrice = ".inventory_details_price"
+const addToCartButton = "button[data-test*='add-to-cart']"
+
+const addProductToCart = async (page) => {
+    await page.click(addToCartButton)
+}
+
+const isProductImageVisible = async (page) => {
+    return await page.locator(productImage).visible()
+}
+
+const areProductDetailsVisible = async (page) => {
+    if (!await page.locator(productName).isVisible()) {
+        return false
+    }
+    if (!await page.locator(productDescription).isVisible()) {
+        return false
+    }
+    if (!await page.locator(productPrice).isVisible()) {
+        return false
+    }
+    return true
+}
+
+module.exports = {
+    addProductToCart,
+    isProductImageVisible,
+    areProductDetailsVisible
+}

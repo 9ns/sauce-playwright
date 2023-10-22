@@ -10,15 +10,17 @@ const areMenuItemsVisible = async (page) => {
     await page.click(hamburgerMenu)
     if (!await page.locator(menuItemProducts).isVisible()) {
         return false
-    } else if (!await page.locator(menuItemAbout).isVisible()) {
-        return false
-    } else if (!await page.locator(menuItemLogout).isVisible()) {
-        return false
-    } else if (!await page.locator(menuItemReset).isVisible()) {
-        return false
-    } else {
-        return true
     }
+    if (!await page.locator(menuItemAbout).isVisible()) {
+        return false
+    }
+    if (!await page.locator(menuItemLogout).isVisible()) {
+        return false
+    }
+    if (!await page.locator(menuItemReset).isVisible()) {
+        return false
+    }
+    return true
 }
 
 const isShoppingCartVisible = async (page) => {

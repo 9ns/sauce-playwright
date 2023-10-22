@@ -7,13 +7,14 @@ const copyrightText = ".footer_copy"
 const areSocialsVisible = async (page) => {
     if (!await page.locator(listItemTwitter).isVisible()) {
         return false
-    } else if (!await page.locator(listItemFacebook).isVisible()) {
-        return false
-    } else if (!await page.locator(listItemLinkedin).isVisible()) {
-        return false
-    } else {
-        return true
     }
+    if (!await page.locator(listItemFacebook).isVisible()) {
+        return false
+    }
+    if (!await page.locator(listItemLinkedin).isVisible()) {
+        return false
+    }
+    return true
 }
 
 const getCopyrightText = async (page) => {
