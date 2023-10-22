@@ -54,6 +54,8 @@ test("User purchases product from product detail page", async ({ page }) => {
 
     await gotoProduct(page, 1)
     await addProductToCart(page)
+    await isProductImageVisible(page)
+    await areProductDetailsVisible(page)
     await gotoCart(page)
 
     const actualCartProducts = await getCartProducts(page)

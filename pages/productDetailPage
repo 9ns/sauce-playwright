@@ -2,7 +2,7 @@ const backButton = "#back-to-products"
 const productContainer = ".inventory_details_desc_container"
 const productName = "[class*='inventory_details_name']"
 const productImage = ".inventory_details_img"
-const productDescription = "[class*='inventory_details_desc']"
+const productDescription = "[class='inventory_details_desc large_size']"
 const productPrice = ".inventory_details_price"
 const addToCartButton = "button[data-test*='add-to-cart']"
 
@@ -11,7 +11,7 @@ const addProductToCart = async (page) => {
 }
 
 const isProductImageVisible = async (page) => {
-    return await page.locator(productImage).visible()
+    return await page.locator(productImage).isVisible()
 }
 
 const areProductDetailsVisible = async (page) => {
