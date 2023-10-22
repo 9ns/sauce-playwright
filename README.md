@@ -5,7 +5,10 @@ NPM and Node.js setup
 1. Clone the project
 2. Navigate to the root of the project
 3. Install with ```npm install```
+4. Install playwright with ```npx playwright install``` if it isn't already installed
 
+The .env file is intentionally commented out of .gitignore to make setup of this project easier
+   
 ### Package.json scripts for terminal
 
 ```npm test``` - Run all tests in chromium headless
