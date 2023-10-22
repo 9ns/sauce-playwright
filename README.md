@@ -1,33 +1,25 @@
-# Prerequisites:
+### Prerequisites
 NPM and Node.js setup
 
-# To run:
+### To run
 1. Clone the project
 2. Navigate to the root of the project
 3. Install with ```npm install```
 
-Run all tests in headless mode with:
+### Package.json scripts for terminal
 
-```npm test```
+```npm test``` - Run all tests in chromium headless
 
-Run all tests in headed mode with:
+```npm run headed``` - Run all tests in chromium headed
 
-```npm run headed```
+```npm run debug``` - Debug in chromium headed
 
-Run all tests in debug mode, step by step with:
+### To run in other browsers from terminal, run
 
-```npm run debug```
+```npx playwright --browser [chromium, firefox, webkit or all]```
 
-Chromium is set up as the default browser, run in another browser or all browsers with:
+To change default browser(s) or to emulate mobile browsers, edit the "projects" section of playwright.config.js and run 
 
-```npx playwright test --browser chromium```
+```npx playwright test```
 
-```npx playwright test --browser firefox```
-
-```npx playwright test --browser webkit```
-
-```npx playwright test --browser all```
-
-To change default browser(s) or to emulate mobile browsers, edit the "projects" section of playwright.config.js (and the package.json scripts)
-
-To slow down the tests while they are running, the "slowMo" option in playwright.config.js can be changed
+To slow down the tests while they are running, the "slowMo" value in playwright.config.js can be changed to ex. ```1000```
