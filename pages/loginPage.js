@@ -2,7 +2,7 @@ const loginTitle = ".login_logo"
 const usernameField = "#user-name"
 const passwordField = "#password"
 const loginButton = "#login-button"
-const errorMessage = ".error-message-container"
+const errorMessage = "[data-test='error']"
 
 const login = async (page, username, password) => {
     await page.goto("/")
